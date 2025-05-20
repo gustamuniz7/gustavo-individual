@@ -9,23 +9,24 @@
   </head>
 
   <body>
-    <div class="header">
+        <div class="header">
       <div class="container">
         <ul class="navbar">
           <h5 class="agora">
             <a href="./index.html">Início</a>
           </h5>
           <h5>
-            <a href="./sobremim.html">Sobre nós</a>
+            <a href="./sobremim.html">Sobre Mim</a>
           </h5>
-           <li><a href="./index.html"><img src="./Imgs/spfc-logo.png"></a></li>
+          <a href="#"><img src="./Imgs/spfc-logo.png"></a>
           <h5>
-            <a href="./quiz.html">Quiz</a>
+            <a href="./juan.html">Juan Inzquierdo</a>
           </h5>
           <h5>
             <a href="./login-spfc.html">Login</a>
           </h5>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="cadastro">
@@ -38,27 +39,27 @@
               <input
                 placeholder="Insira seu nome de usuário"
                 type="text"
-                id="ipt_nomeUsuario"
+                id="nome_input"
                 
               />
               <p>E-mail:</p>
               <input
                 placeholder="Insira seu email"
                 type="text"
-                id="ipt_email"
+                id="email_input"
                 value=""
               />
               <p>Senha:</p>
               <input
                 placeholder="Crie uma senha"
                 type="password"
-                id="ipt_senha"
+                id="senha_input"
                 value=""
               />
               <p>Confirmar Senha:</p>
               <input type="password"
               placeholder="Confirme sua senha"
-              id="ipt_confirmacao"
+              id="confirmacao_senha_input"
               value="">
             </div>
           </div>
@@ -74,86 +75,37 @@
   </body>
   <script>
     function cadastro() {
-      var nome = ipt_nomeUsuario.value
-      var email = ipt_email.value 
-      var senha = ipt_senha.value
 
-      var mensCadastro;
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-      var tamanhoSenha = senha.length;
-
-      var terminaCom = email.endsWith(".com") || email.endsWith(".com.br");
-      var indiceArroba = email.indexOf("@");
-      var contemArroba = indiceArroba >= 0;
-
-     
-
-      if (
-        ipt_nomeUsuario == "" ||
-        email == "" ||
-        senha == ""
-      ) {
-        mensCadastro =
-          "<span><br>Todos os campos devem ser preenchidos!</span>";
-      } else if (!terminaCom || !contemArroba) {
-        mensCadastro =
-          "<span><br>O e-mail não é válido. Por favor, insira um e-mail com formato válido (exemplo@sptech.com ou exemplo@sptech.com.br).</span>";
-      } else if (tamanhoSenha < 6) {
-        mensCadastro =
-          "<span><br>A senha deve ter pelo menos 6 caracteres.</span>";
-      } else if (cnpjValido != 14) {
-        mensCadastro = "<span><br>O cnpj deve ter 14 caracteres.</span>";
-      } else if (telefoneValido != 14 || !indiceTraço || !indiceParenteses) {
-        mensCadastro =
-          "<span><br>O telefone não é válido. Por favor, insira um telefone com formato válido (exemplo: (11)12345-6789).</span>";
-      } else if (cepValido != 8) {
-        mensCadastro =
-          "<span><br>O cep não é válido. Por favor, insira um cep com formato válido (exemplo: 12345678).</span>";
-      } 
-
-      div_mensagem.innerHTML = `${mensCadastro}`;
-    }
-
-     // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+        if (
+            nomeVar == "" || 
+            emailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == ""
+        ) {
+            alert
+                ("Preencha todos os campos");
         }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
 
-    return false;
-  
 
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+            }),
+        })
+    }
   </script>
 </html>
