@@ -35,23 +35,35 @@
 
       <div class="nav">
         <div class="boxer">
-          <div class="box">
-            <div>
-              <p>Nome de Usuário:</p>
-              <input placeholder="Insira seu nome de usuário" type="text" id="nome_input" />
-              <p>Qual Seu Jogador Favorito?</p>
-              <input placeholder="Informe seu jogador favorito" type="text" id="jogador_input">
-            </div>
-            <div class="box2">
-              <p>E-mail:</p>
-              <input placeholder="Insira seu email" type="text" id="email_input" />
-              <p>Senha:</p>
-              <input placeholder="Crie uma senha" type="password" id="senha_input" />
-              <p>Confirmar Senha:</p>
-              <input type="password" placeholder="Confirme sua senha" id="confirmacao_senha_input">
-            </div>
-          </div>
-        </div>
+  <!-- Coluna Esquerda -->
+  <div class="coluna-esquerda">
+    <div class="box2">
+      <p>Nome de Usuário:</p>
+      <input type="text" placeholder="Insira seu nome de usuário">
+    </div>
+    <div class="box2">
+      <p>Qual Seu Jogador Favorito?</p>
+      <input type="text" placeholder="Informe seu jogador favorito">
+    </div>
+  </div>
+
+  <!-- Coluna Direita -->
+  <div class="coluna-direita">
+    <div class="box2">
+      <p>E-mail:</p>
+      <input type="email" placeholder="Insira seu email">
+    </div>
+    <div class="box2">
+      <p>Senha:</p>
+      <input type="password" placeholder="Crie uma senha">
+    </div>
+    <div class="box2">
+      <p>Confirmar Senha:</p>
+      <input type="password" placeholder="Confirme sua senha">
+    </div>
+  </div>
+</div>
+
         <div class="nav-botao">
           <button onclick="cadastro()">Cadastrar-se</button>
           <div id="div_mensagem"></div>

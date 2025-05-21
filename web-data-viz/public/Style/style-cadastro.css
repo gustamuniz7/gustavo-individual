@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Metrophobic&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 
-* {
-  font-family: "metrophobic";
+body{
+    font-family: "metrophobic";
+    margin: 0;
+    background-color: white;
+    scroll-behavior: smooth;
 }
 
 .header .logo {
@@ -54,97 +57,62 @@ body {
   width: 40px;
 }
 .cadastro {
-  height: 900px;
-  width: 100%;
- 
+  height: 100vh;
+  
+ justify-content: center;
   background-position: center;
   display: flex;
   backdrop-filter: brightness(50%);
-  
 }
-
-.cadastro .container {
-  width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-}
-
-
-
-.cadastro .container .nav {
-  background-color: rgba(0, 0, 0, 0.603);
-  width: 450px;
-  height: fit-content;
-  border-radius: 30px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.575);
-  display: flex;
+.cadastro .container{
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 30px;
-  margin: auto;
+}
+.cadastro .container .nav{
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.375);
 }
 
+/* Organização em duas colunas */
 .cadastro .container .nav .boxer {
-  width: 500px;
-  height: 520px;
-  border-radius: 30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  
-  gap: 30px;
-}
-
-.cadastro .container .nav .box {
-  width: 300px;
-  height: 300px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-.cadastro .container .nav .box2 {
-  width: 300px;
-  height: 300px;
-  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-direction: row;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* Colunas esquerda e direita */
+.coluna-esquerda, .coluna-direita {
+  display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
-.cadastro .container .nav .box p {
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
+/* Ajustes nos campos de input */
+.box2 {
   display: flex;
-}
-.cadastro .container .nav .box2 p {
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
-  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.cadastro .container .nav .box input {
+.box2 input {
   width: 250px;
-  height: 100px;
+  height: 45px;
   padding: 10px;
-  font-size: larger;
-  border-radius: 20px;
+  font-size: 16px;
+  border-radius: 10px;
   border: none;
 }
-.cadastro .container .nav .box2 input {
-  width: 250px;
-  height: 100px;
-  padding: 10px;
-  font-size: larger;
-  border-radius: 20px;
-  border: none;
+
+/* Labels */
+.box2 p {
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  margin: 5px 0;
 }
 
 .cadastro .container .nav button {
