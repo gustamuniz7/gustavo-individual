@@ -1,111 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./Imgs/spfc-logo.png" type="image/x-icon">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="./Style/style-cadastro.css" />
-  </head>
 
-  <body>
-        <div class="header">
-      <div class="container">
-        <ul class="navbar">
-          <h5 class="agora">
-            <a href="./index.html">Início</a>
-          </h5>
-          <h5>
-            <a href="./sobremim.html">Sobre Mim</a>
-          </h5>
-          <a href="#"><img src="./Imgs/spfc-logo.png"></a>
-          <h5>
-            <a href="./juan.html">Juan Inzquierdo</a>
-          </h5>
-          <h5>
-            <a href="./login-spfc.html">Login</a>
-          </h5>
-          </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./Imgs/spfc-logo.png" type="image/x-icon">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="./Style/style-cadastro.css" />
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <ul class="navbar">
+        <h5 class="agora">
+          <a href="./index.html">Início</a>
+        </h5>
+        <h5>
+          <a href="./sobremim.html">Sobre Mim</a>
+        </h5>
+        <a href="#"><img src="./Imgs/spfc-logo.png"></a>
+        <h5>
+          <a href="./juan.html">Juan Inzquierdo</a>
+        </h5>
+        <h5>
+          <a href="./login-spfc.html">Login</a>
+        </h5>
+      </ul>
+    </div>
+  </div>
+  </div>
+  <div class="cadastro">
+    <div class="container">
+
+      <div class="nav">
+        <div class="boxer">
+          <div class="box">
+            <p>Nome de Usuário:</p>
+            <input placeholder="Insira seu nome de usuário" type="text" id="nome_input" />
+            <p>Qual Seu Jogador Favorito?</p>
+            <input placeholder="Informe seu jogador favorito" type="text" id="jogador_input">
+            <p>E-mail:</p>
+            <input placeholder="Insira seu email" type="text" id="email_input" value="" />
+            <p>Senha:</p>
+            <input placeholder="Crie uma senha" type="password" id="senha_input" value="" />
+            <p>Confirmar Senha:</p>
+            <input type="password" placeholder="Confirme sua senha" id="confirmacao_senha_input" value="">
+          </div>
+        </div>
+        <div class="nav-botao">
+          <button onclick="cadastro()">Cadastrar-se</button>
+          <div id="div_mensagem"></div>
         </div>
       </div>
     </div>
-    <div class="cadastro">
-      <div class="container">
+  </div>
 
-        <div class="nav">
-          <div class="boxer">
-            <div class="box">
-              <p>Nome de Usuário:</p>
-              <input
-                placeholder="Insira seu nome de usuário"
-                type="text"
-                id="nome_input"
-                
-              />
-              <p>E-mail:</p>
-              <input
-                placeholder="Insira seu email"
-                type="text"
-                id="email_input"
-                value=""
-              />
-              <p>Senha:</p>
-              <input
-                placeholder="Crie uma senha"
-                type="password"
-                id="senha_input"
-                value=""
-              />
-              <p>Confirmar Senha:</p>
-              <input type="password"
-              placeholder="Confirme sua senha"
-              id="confirmacao_senha_input"
-              value="">
-            </div>
-          </div>
-          <div class="nav-botao">
-            <button onclick="cadastro()">Cadastrar-se</button>
-            <div id="div_mensagem"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</body>
+<script>
+  function cadastro() {
 
-    </div>
-  </body>
-  <script>
-    function cadastro() {
-
-        var nomeVar = nome_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
-
-        if (
-            nomeVar == "" || 
-            emailVar == "" ||
-            senhaVar == "" ||
-            confirmacaoSenhaVar == ""
-        ) {
-            alert
-                ("Preencha todos os campos");
-        }
-
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-            }),
-        })
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var jogadorVar = jogador_input.value;
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == "" ||
+      jogadorVar == ""
+    ) {
+      alert
+        ("Preencha todos os campos");
     }
-  </script>
+
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        jogadorServer: jogadorVar
+      }),
+    })
+    setTimeout(function () {
+      window.location = "./login-spfc.html";
+    },); // apenas para exibir o loading
+
+  }
+</script>
+
 </html>
