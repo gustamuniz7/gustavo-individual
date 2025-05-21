@@ -205,6 +205,14 @@
                     <h2>Você acertou ${acertos} de ${perguntas.length} perguntas.</h2>
                     <button class= "nextbtn" onclick="location.reload()">Tentar novamente</button>
                     `;
+                    fetch("/quiz/quiz",{method:"POST", headers:{
+                        "Content-Type": "application/json"
+                    }, body:JSON.stringify({
+                        acertos: acertos,
+                        fkusuario: sessionStorage.getItem("ID_USUARIO")
+                    })}).then(function (resultado){
+                        console.log(resultado)
+                    })
                     }
                 } else {
                     alert("Por favor, selecione uma opção.");
