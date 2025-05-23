@@ -58,7 +58,7 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: black;
   width: 120px;
 }
 
@@ -71,7 +71,7 @@ body {
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #e6005a;
+  background-color: black;
   width: 80px;
 }
 
@@ -82,7 +82,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid black;
   padding: 20px;
 }
 
@@ -170,25 +170,6 @@ body {
   font-weight: 800;
 }
 
-.perigo-frio {
-  background-color: #5c6bc0;
-}
-
-.perigo-quente {
-  background-color: red;
-}
-
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
-.ideal {
-  background-color: #9ccc65;
-}
 
 .cards {
   display: flex;
@@ -290,7 +271,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: #e6005a;
+  color: black;
   background-color: white;
   margin: 5px;
   border-radius: 3px;
@@ -299,11 +280,11 @@ body {
 
 .btn-pink {
   color: white;
-  background-color: #e6005a;
+  background-color: black;
 }
 
 .btn-white {
-  color: #e6005a;
+  color: black;
   background-color: white;
 
 }
@@ -391,7 +372,7 @@ canvas {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: rgba(252, 190, 57, 0.753);
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -400,14 +381,14 @@ canvas {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid black;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: black;
   padding: 0;
   margin: 0;
 }
@@ -422,7 +403,7 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: red;
   color: white;
   border-radius: 10px;
   text-align: center;
