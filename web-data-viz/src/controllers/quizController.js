@@ -17,4 +17,5 @@ function resultadoQuiz(req, res) {
     );
 }
 
+
 module.exports = {resultadoQuiz}

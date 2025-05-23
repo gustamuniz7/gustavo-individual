@@ -11,5 +11,8 @@ router.post("/cadastrar", function (req, res) {
 router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
+router.get("/tempo-real/:acertos", function (req, res) {
+    usuarioController.buscarMedidasEmTempoReal(req, res);
+})
 
 module.exports = router;
