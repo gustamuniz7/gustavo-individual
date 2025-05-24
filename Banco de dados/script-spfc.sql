@@ -17,6 +17,15 @@ fkusuario int,
 foreign key (fkusuario) references usuario(id)
 );
 
+SELECT 
+    nome as 'Nome',
+    jogador as 'Jogador Favorito',
+    corretas as 'Acertos'
+FROM 
+    quiz q
+JOIN 
+    usuario u ON q.fkusuario = u.id;
+
 select * from usuario;
 
 select * from quiz;

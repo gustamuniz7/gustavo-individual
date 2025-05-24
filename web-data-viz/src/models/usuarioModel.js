@@ -1,3 +1,4 @@
+
 var database = require("../database/config")
 
 function autenticar(email, senha) {
@@ -24,5 +25,6 @@ function cadastrar(nome, email, senha, jogador) {
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    obterDadosGrafico
 };
