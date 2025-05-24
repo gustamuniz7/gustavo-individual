@@ -3,7 +3,7 @@ var router = express.Router();
 
 var dashboardController = require("../controllers/dashboardController");
 
-router.get("/enderecoAqui", function (req, res) {
+router.post("/buscarUltimosAcertos", function (req, res) {
     dashboardController.buscarUltimosAcertos(req, res);
 });
 

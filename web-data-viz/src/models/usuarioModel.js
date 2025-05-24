@@ -25,6 +25,5 @@ function cadastrar(nome, email, senha, jogador) {
 
 module.exports = {
     autenticar,
-    cadastrar,
-    obterDadosGrafico
+    cadastrar
 };

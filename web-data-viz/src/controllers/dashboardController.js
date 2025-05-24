@@ -1,7 +1,7 @@
 var dashboardModel = require("../models/dashboardModel");
 
 function buscarUltimosAcertos(req, res) {
-    novoModel.buscarUltimosAcertos(req)
+    dashboardModel.buscarUltimosAcertos(req)
         .then(resultado => {
             res.status(200).json(resultado);
         })

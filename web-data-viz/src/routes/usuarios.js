@@ -11,8 +11,6 @@ router.post("/cadastrar", function (req, res) {
 router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
-router.get("/obterDadosGrafico/:acertos", function (req, res) {
-    usuarioController.obterDadosGrafico(req, res);
-})
+
 
 module.exports = router;

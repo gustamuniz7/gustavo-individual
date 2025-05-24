@@ -72,6 +72,8 @@
             <div id="graficos">
             </div>
         </div>
+
+        <div id="graficoQuiz"></div>
     </div>
 
 
@@ -80,6 +82,76 @@
 </html>
 
 <script>
+    function obterDados(){
+      fetch("/dashboard/buscarUltimosAcertos",{method:"POST", headers:{
+                        "Content-Type": "application/json"
+                    }, body:JSON.stringify({
+                        fkusuario: sessionStorage.getItem("ID_USUARIO")
+                    })}).then(function (resultado){
+                        console.log(resultado)
+
+                        resultado.json().then(
+                            function (json){
+                                let labels = []
+                                let acertos = []
+
+                                console.log(json)
+
+                                for(let i = 0; i < json.length; i++){
+                                    labels.push(`tentativa: ${i + 1}`) 
+                                    acertos.push(json[i].acertos)
+                                }
+
+                                const graficoAcerto = document.getElementById("graficoQuiz")
+                                new Chart(graficoAcerto, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: labels,
+                                        dataset: [
+                                            {
+                                                data: acertos,
+                                                borderColor: '#F9B631',
+                            backgroundColor: '#F9B631',
+                            fill: true,
+                            borderRadius: 5,
+                            color: '#fff',
+                        }
+                    ]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                stepSize: 50,
+                                padding: 10
+                            },
+                            grid: {
+                                display: false
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+                )
+
+            }
+        ).catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+                                            }
+                                    
+
     // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     // let proximaAtualizacao;
@@ -164,66 +236,11 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-     function obterDados() {
-        // Aqui seria o endereço criado anteriormente que obteria os dados do banco de dados
-        fetch('/models/dashboardModel')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                plotarGrafico(data); // Passando os dados corretamente para a função plotarGrafico
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-    }
+    
 
   
 
-    // Função para plotar o gráfico com os dados
-    function plotarGrafico(dados) {
-        console.log('iniciando plotagem do gráfico...');
-
-        // Criando estrutura para o gráfico de barras
-        let labels = [];
-        let dadosGrafico = [];
-
-        // Inserindo valores recebidos em estrutura para o gráfico
-        for (let i = 0; i < dados.length; i++) {
-            let registro = dados[i];
-            labels.push(registro.XXXXX);  // Passe aqui a label do que você está tentando buscar no select do bd (XXXXX)
-            dadosGrafico.push(registro.YYYYY);  // Passe aqui os dados que você está tentando buscar no select bd (YYYYY)
-        }
-
-        console.log('O gráfico será plotado com os seguintes valores:');
-        console.log('Labels:', labels);
-        console.log('Dados:', dadosGrafico);
-
-        // Configurando o gráfico de barras
-        const config = {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'LABEL DO EIXO Y',
-                    data: dadosGrafico,
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0.6)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true
-            }
-        };
-
-        // Plotando o gráfico de barras no canvas
-        let myChart = new Chart(
-            document.getElementById('graficoBarras'),  // Chamando o gráfico pelo ID do canvas
-            config
-        );
-    }
+   
 
 
 
