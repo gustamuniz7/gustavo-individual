@@ -28,7 +28,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body>
+<body onload="obterDados()">
 
     <div class="janela">
         <div class="header-left">
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-        <div id="graficoQuiz"></div>
+        <canvas id="graficoQuiz"></canvas>
     </div>
 
 
@@ -110,8 +110,8 @@
                                         dataset: [
                                             {
                                                 data: acertos,
-                                                borderColor: '#F9B631',
-                            backgroundColor: '#F9B631',
+                                                borderColor: '#FFFFFF',
+                            backgroundColor: '#FF0000',
                             fill: true,
                             borderRadius: 5,
                             color: '#fff',

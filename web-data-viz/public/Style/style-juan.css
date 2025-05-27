@@ -69,7 +69,7 @@ body{
     height: 100%;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: brightness(30%);
+    backdrop-filter: brightness(20%);
     width: 100%;
     flex-direction: row;
     
