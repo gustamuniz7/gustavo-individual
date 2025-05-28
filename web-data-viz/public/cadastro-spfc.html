@@ -42,8 +42,20 @@
               <input type="text" placeholder="Insira seu nome de usuário" id="nome_input">
             </div>
             <div class="box2">
-              <p>Qual Seu Jogador Favorito?</p>
-              <input type="text" placeholder="Informe seu jogador favorito" id="jogador_input">
+              <p>Qual o seu jogador preferido do São Paulo</p>
+              <select id="jogador_input">
+                <option value="#">Selecione um Jogador</option>
+                <option value="Calleri">Calleri</option>
+                <option value="Hernanes">Hernanes</option>
+                <option value="Kaká">Kaká</option>
+                <option value="Lucas">Lucas Moura</option>
+                <option value="Fabiano">Luis Fabiano</option>
+                <option value="Luciano">Luciano</option>
+                <option value="Oscar">Oscar</option>
+                <option value="Raí">Raí</option>
+                <option value="Ceni">Rogério Ceni</option>
+
+              </select>
             </div>
           </div>
 
@@ -82,12 +94,13 @@
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
     var jogadorVar = jogador_input.value;
+    
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      jogadorVar == ""
+      jogadorVar == "#"
     ) {
       alert
         ("Preencha todos os campos");

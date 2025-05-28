@@ -17,6 +17,9 @@ fkusuario int,
 foreign key (fkusuario) references usuario(id)
 );
 
+select jogador,COUNT(jogador) as contagem_jogador from usuario group by jogador;
+select jogador,COUNT(jogador) as contagem_jogador from usuario group by jogador;
+
 SELECT 
     nome as 'Nome',
     jogador as 'Jogador Favorito',
@@ -26,9 +29,16 @@ FROM
 JOIN 
     usuario u ON q.fkusuario = u.id;
 
-select * from usuario;
+select corretas from quiz;
+
+select jogador from usuario;
 
 select * from quiz;
 
-select sum(corretas) from quiz;
+desc quiz;
+
+SELECT 
+    AVG(corretas) AS media_geral
+FROM 
+    quiz;
 

@@ -13,55 +13,6 @@ body {
   justify-content: center;
 }
 
-.dash-right .avisos {
-  width: 100%;
-  color: rgb(216, 216, 216);
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.dash-right .avisos .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dash-right .avisos .container .div-form {
-  width: 95%;
-}
-
-.dash-right .avisos .container .div-form #form_postagem {
-  width: 95%;
-}
-
-.dash-right .avisos .div-form label {
-  width: 95%;
-}
-
-.dash-right .avisos .div-form input {
-  width: 95%;
-  border-radius: 5px;
-}
-
-.dash-right .avisos .div-form textarea {
-  width: 95%;
-  border: 3px solid #e6005a;
-  background-color: white;
-  border-radius: 5px;
-}
-
-.dash-right .avisos .div-form button {
-  cursor: pointer;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: black;
-  width: 120px;
-}
-
 .publicacao-btn-editar {
   cursor: pointer;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -181,45 +132,6 @@ body {
   color: white;
 }
 
-.card-aquario {
-  margin: 2%;
-  min-width: 40%;
-  max-width: 50%;
-  width: fit-content;
-  flex-wrap: wrap;
-  display: flex;
-  /* text-align: center; */
-  height: 180px;
-  /* justify-content: right; */
-  background-color: #212124;
-  font-size: 20px;
-}
-
-.card-aquario h1 {
-  width: fit-content;
-}
-
-.card-aquario p {
-  margin: 0;
-  font-size: 50px;
-  font-weight: lighter;
-  text-align: left;
-}
-
-.desc-aquario {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.desc-aquario .cor-alerta {
-  width: 30px;
-}
-
-.title-aquario {
-  width: 100%;
-}
 
 
 .cards h1 {
@@ -316,6 +228,7 @@ canvas {
   display: flex;
   width: 100vw;
   justify-content: center;
+ 
 }
 
 .header-left a {
@@ -328,13 +241,15 @@ canvas {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 200px;
+  width: 375px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid red;
   background-color: #212124;
+   box-shadow: 20px 0 0 #ff0000 inset,
+    40px 0 0 white inset, 
+    60px 0 0 black inset;
 }
 
 .dash-right {
@@ -361,7 +276,7 @@ canvas {
 }
 
 .hello h3 {
-  color: beige;
+  color: white;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -371,16 +286,16 @@ canvas {
 }
 
 .btn-nav {
-  width: 40%;
+  width: 30%;
   color: white;
-  background-color: rgba(252, 236, 91, 0.867);
+  background-color:red;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white {
-  width: 50%;
+  width: 30%;
   background-color: white;
   border: 3px solid black;
   border-radius: 5px;
@@ -404,11 +319,31 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: red;
+  background-color: black;
   color: white;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+.graficoQuiz{
+  height: 25%;
+  width: 65%;
+  margin-left: 400px;
+  justify-content: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.graficoJogador{
+  height: 25%;
+  width: 65%;
+  margin-left: 400px;
+  justify-content: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
 }

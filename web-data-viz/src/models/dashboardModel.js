@@ -1,4 +1,3 @@
-
 var database = require("../database/config");
 
 function buscarUltimosAcertos(fkusuario) {
@@ -9,6 +8,16 @@ function buscarUltimosAcertos(fkusuario) {
     return database.executar(instrucaoSql);
 }
 
+function buscarJogadores() {
+
+    var instrucaoSql = `select jogador,COUNT(jogador) as total from usuario group by jogador;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
-    buscarUltimosAcertos
+    buscarUltimosAcertos,
+    buscarJogadores
 };
