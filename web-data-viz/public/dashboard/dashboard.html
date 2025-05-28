@@ -62,9 +62,6 @@
 
         </div>
 
-        <div class="dash">
-            <div id="alerta">
-            </div>
 
             <div class="btns-dash" id="btnacerto">
                 <!-- O gráfico é chamado de acordo com o id (fk_acerto) do banco  -->
@@ -94,57 +91,50 @@
                             function (json){
                                 let labels = []
                                 let acertos = []
-
+                                
                                 console.log(json)
-
+                                
                                 for(let i = 0; i < json.length; i++){
                                     labels.push(`tentativa: ${i + 1}`) 
-                                    acertos.push(json[i].acertos)
+                                    acertos.push(json[i].corretas)
                                 }
+                                console.log(acertos)
+                                console.log(labels)
 
                                 const graficoAcerto = document.getElementById("graficoQuiz")
-                                new Chart(graficoAcerto, {
-                                    type: 'bar',
-                                    data: {
-                                        labels: labels,
-                                        dataset: [
-                                            {
-                                                data: acertos,
-                                                borderColor: '#FFFFFF',
-                            backgroundColor: '#FF0000',
-                            fill: true,
-                            borderRadius: 5,
-                            color: '#fff',
-                        }
-                    ]
-                },
-                options: {
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            ticks: {
-                                stepSize: 50,
-                                padding: 10
-                            },
-                            grid: {
-                                display: false
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-        }
-                )
 
+new Chart(graficoAcerto, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Acertos',
+                data: acertos,
+                fill: false,
+                borderColor: '#006DAC',
+                backgroundColor: '#006DAC',
+                tension: 0.3,
+                order: 2
+            }
+        ]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            subtitle: {
+                display: true,
+                text: 'Acertos por tentativa'
+            }
+        }
+    }
+});
+                        }
+                    )
             }
         ).catch(function (error) {
             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
