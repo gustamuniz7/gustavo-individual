@@ -71,10 +71,15 @@
     </div>
 
     <div class="graficoQuiz">
+        <h1>Seus Acertos por Tentativa</h1>
         <canvas id="graficoQuiz"></canvas>
     </div>
-
+    <div>
+        <br>
+        <br>
+    </div>
     <div class="graficoJogador">
+        <H1>Os Jogadores Favoritos dos Usuários</H1>
         <canvas id="graficoJogador"></canvas>
     </div>
 
@@ -121,7 +126,15 @@
                                     label: 'Acertos',
                                     data: acertos,
                                     fill: false,
-                                    backgroundColor: 'red',
+                                    backgroundColor: [
+                                        '#9197ae',
+                                        '#f02d3a',
+                                        '#273043',
+                                        '#dd0426',
+                                        '#eff6ee',
+                                        '#f02d3a',
+
+                                    ],
                                     tension: 0.3,
                                     order: 2,
                                     borderRadius: 7
@@ -138,7 +151,7 @@
                             plugins: {
                                 subtitle: {
                                     display: true,
-                                    text: 'Acertos por tentativa'
+
                                 }
                             }
                         }
@@ -181,29 +194,28 @@
                             labels: labels,
                             datasets: [
                                 {
+                                    weight: 5,
+                                    borderRadius: 5,
                                     label: 'Jogadores',
                                     data: jogadores,
                                     fill: false,
-                                    backgroundColor: ['', '', 'black'],
+                                    backgroundColor: [
+                                        '#9197ae',
+                                        '#f02d3a',
+                                        '#273043',
+                                        '#dd0426',
+                                        '#eff6ee',
+                                        '#f02d3a',
+
+                                    ],
                                     order: 2
                                 }
                             ]
 
                         },
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            },
-                            plugins: {
-                                subtitle: {
-                                    display: true,
-                                    text: 'Jogadores Favoritos dos Usuários'
-                                }
-                            }
-                        }
-                    });
+
+                    }
+                    );
                 }
             )
         }
