@@ -1,6 +1,7 @@
 create database if not exists saopaulo;
 use saopaulo;
 
+
 create table usuario (
 id int primary key auto_increment,
 nome varchar(100),
@@ -17,17 +18,10 @@ fkusuario int,
 foreign key (fkusuario) references usuario(id)
 );
 
-select jogador,COUNT(jogador) as contagem_jogador from usuario group by jogador;
+-- selecionando os jogadores e a quantidade de jogadores favoritos do usuario
 select jogador,COUNT(jogador) as contagem_jogador from usuario group by jogador;
 
-SELECT 
-    nome as 'Nome',
-    jogador as 'Jogador Favorito',
-    corretas as 'Acertos'
-FROM 
-    quiz q
-JOIN 
-    usuario u ON q.fkusuario = u.id;
+
 
 select corretas from quiz;
 
