@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./Style/style-quiz.css">
-    <link rel="stylesheet" href="./Style/dashboards.css">
     <link rel="shortcut icon" href="./Imgs/spfc-logo.png" type="image/x-icon">  
     <title>Quiz do São Paulo</title>
 
@@ -13,7 +12,7 @@
 <body>
     <div class="janela">
         <div class="header-left">
-            <h1>Blog Tricolor</h1>
+            <img src="./Imgs/logo-blogtricolor.png">
 
             <div class="hello">
                 <h3>Bem Vindo de volta, <span id="b_usuario">usuário</span>!</h3>
@@ -39,7 +38,9 @@
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
+                <a href="./login.html">
+                    <h3>Sair</h3>
+                </a>
             </div>
 
         </div>
@@ -51,7 +52,8 @@
                 <p id="pergunta"></p>
                 
                 <div id="opcoes"></div>
-                <button class="nextbtn" onclick="proximaPergunta()">Próxima</button>
+               
+                    <button class="nextbtn" onclick="proximaPergunta()">Próxima</button>
                 <h3 id="resultado"></h3>
             </div>
 
