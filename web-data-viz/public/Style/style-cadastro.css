@@ -151,8 +151,11 @@ body {
   transform: scale(1);
 }
 
-span {
+.nav-botao .mensagem {
   font-weight: bold;
   font-size: 20px;
+  color: white;
+  text-align: center;
+  margin-top: 5vh;
 }
 

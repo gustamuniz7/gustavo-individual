@@ -80,6 +80,44 @@ body{
     color: white;
 }
 
+.banner2{
+    height: 100vh;
+    background-image: url('../Imgs/fundo-spfc.png');
+    background-size: cover;
+    background-position: center bottom;
+    box-shadow: 0 -10px 20px white inset;
+    flex-direction: row;
+}
+
+.banner2 .container p{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    justify-content: center;
+    width: 90%;
+
+}
+
+.banner2 .container {
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: brightness(20%);
+    width: 100%;
+    flex-direction: row;
+    
+}
+
+.banner2 .container p{
+    font-weight: 600px;
+    color: white;
+}
+
+.banner2 .container img{
+    width: 100%;
+    height: 100%;
+}
+
+
 .social .container{
     width: 100%;
     height: 100%;
@@ -138,10 +176,10 @@ body{
     padding: 20px 0;
   }
   
-  .footer .container {
+  .footer .container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     max-width: 1000px;
     margin: 0 auto;
     width: 90%;

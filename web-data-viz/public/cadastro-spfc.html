@@ -78,7 +78,7 @@
 
         <div class="nav-botao">
           <button onclick="cadastro()">Cadastrar-se</button>
-          <div id="div_mensagem"></div>
+          <div id="mensCadastro" class="mensagem"></div>
         </div>
       </div>
     </div>
@@ -94,7 +94,7 @@
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
     var jogadorVar = jogador_input.value;
-    
+
     if (
       nomeVar == "" ||
       emailVar == "" ||
@@ -105,9 +105,19 @@
       alert
         ("Preencha todos os campos");
     }
+   
+        var terminaCom = emailVar.endsWith(".com") || emailVar.endsWith(".com.br");
+        var indiceArroba = emailVar.indexOf("@");
+        var contemArroba = indiceArroba >= 0;
 
-
-    // Enviando o valor da nova input
+    
+       if (!terminaCom || !contemArroba) {
+            mensCadastro.innerHTML = `Por favor, insira um e-mail com formato válido (exemplo@gmail.com ou exemplo@sptech.com.br).`;
+            console.log(mensCadastro)
+        }
+        else if (senhaVar.length < 6) {
+            mensCadastro.innerHTML = "A senha deve ter pelo menos 6 caracteres.";
+        }else{ // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
@@ -127,6 +137,7 @@
     },); // apenas para exibir o loading
 
   }
+}
 </script>
 
 </html>
