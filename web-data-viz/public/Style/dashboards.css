@@ -27,36 +27,6 @@ body {
   overflow: auto;
 }
 
-.btns-dash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-
-}
-
-.graph {
-  width: 70%;
-  margin: auto;
-  padding-top: 10px;
-}
-
-.tituloGraficos {
-  color: rgb(216, 216, 216);
-  display: flex;
-  justify-content: center;
-}
-
-.btn-chart {
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: black;
-  background-color: white;
-  margin: 5px;
-  border-radius: 3px;
-  cursor: pointer
-}
 
 
 canvas {
@@ -89,7 +59,7 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #373737c4;
+  background-color: #373737;
   border-inline-end: #ff0000;
 }
 

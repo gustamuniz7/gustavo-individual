@@ -2,8 +2,8 @@ var quizModel = require("../models/quizModel");
 
 function resultadoQuiz(req, res) {
     var acertos = req.body.acertos
-    var fkusuario = req.body.fkusuario
-    quizModel.guardarResultado(fkusuario, acertos).then(function (resultado) {
+    var fkUsuario = req.body.fkusuario;
+    quizModel.guardarResultado(acertos, fkUsuario).then(function (resultado) {
         res.json(resultado)
     }).catch(
         function (erro) {
